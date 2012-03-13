@@ -19,7 +19,18 @@ add_action('admin_menu', 'wazHelp_remove_menu_items');
 function wazHelp_remove_menu_items() {
   global $submenu;
 
+  
     unset($submenu['index.php'][10]); // Removes 'Updates'
     unset($submenu['plugins.php'][10]); // Removes 'Add new plugin'
+    unset($submenu['plugins.php'][15]); // Removes plugin editor
     unset($submenu['options-general.php'][40]); // Removes 'Permalinks'
 }
+
+/*
+ * Removes items from the admin bar that should not be used
+ */
+function remove_admin_bar_links() {
+	global $wp_admin_bar;
+	$wp_admin_bar->remove_menu('updates');
+}
+add_action( 'wp_before_admin_bar_render', 'remove_admin_bar_links' );
