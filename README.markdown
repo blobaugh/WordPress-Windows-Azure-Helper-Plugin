@@ -1,7 +1,3 @@
- Removes 'Updates'
-    unset($submenu['plugins.php'][10]); // Removes 'Add new plugin'
-    unset($submenu['options-general.php'][40]); // Removes 'Permalinks'
-
 # Windows Azure helper plugin for WordPress
 This plugin does a few simple tasks to help ease the administration and maintenance  of running WordPress on Windows Azure
 
